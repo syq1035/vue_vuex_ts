@@ -7,4 +7,7 @@ export default class Shoppingcart extends Vue {
   @Action('commodity/reduce_commodity_to_shoppingcart_by_id') public add: any
   @Action('commodity/add_commodity_to_shoppingcart_by_id') public reduce: any
   @Action('commodity/get_commodity_of_shoppingcart') public commodityOfshoppingcart: any
+
+  public dialogVisible: boolean = false
+  
 }

@@ -17,8 +17,37 @@
         </div>       
     </div>
     <div class="shoppingcart">
-      <button class="cart"><i class="el-icon-shopping-cart-full"></i></button>
+      <button class="cart" @click="dialogVisible = true"><i class="el-icon-shopping-cart-full"></i></button>
     </div>
+    <el-dialog class="dialog"
+      title="订单详情"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose">
+      <!-- <el-table :data="commodity">
+        <el-table-column v-if="buyNum" property="name" label="日期" width="150"></el-table-column>
+        <el-table-column v-if="buyNum" property="price" label="日期" width="150"></el-table-column>
+        <el-table-column v-if="buyNum" property="buyNum" label="日期" width="150"></el-table-column> 
+      </el-table>
+      -->
+      <table>
+        <tr>
+          <td>商品名</td>
+          <td>数量</td>
+          <td>总价</td>
+        </tr>
+        <tr v-for="(goods, index) in commodity" :key="index">
+          <td v-if="goods.buyNum">{{goods.name}}</td>
+          <td v-if="goods.buyNum">{{goods.buyNum}}</td>
+          <td v-if="goods.buyNum">{{goods.price * goods.buyNum}}</td>
+        </tr>
+      </table>
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">结算</el-button>
+      </span>
+    </el-dialog>
   </div> 
 </template>
 <script lang="ts">
