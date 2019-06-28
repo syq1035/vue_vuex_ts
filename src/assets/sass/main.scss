@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+  .body {
+    display: flex;
+		flex-grow: 1;
+
+    .left {
+      width: 140px;
+      color: black;     
+    }
+
+    .right {
+      flex-grow: 1;
+      width: calc(100% - 140px);
+      background-color: #fafafa;
+    }
+  }
+}

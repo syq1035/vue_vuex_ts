@@ -1,0 +1,24 @@
+.shoppingcart-main {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: 200px 200px;
+  grid-gap: 50px;
+  justify-content: center;
+
+  .goods-item {
+    height: 160px;
+    max-width: 200px;
+    min-width: 100px;
+    border: 1px solid #DCDFE6;
+    border-radius: 10px;
+  }
+  .shoppingcart {
+
+    .cart {
+      position: relative;
+      right: 0;
+      top: 50%;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	.header{
+    height: 100px;
+    background-color: papayawhip;
+	}
+	
+	.content{
+    display: flex;
+		flex-grow: 1;
+		
+		.left{
+			width: 100px;
+			background-color: wheat;
+
+			& > div {
+				height: 30px;
+			}
+		}
+
+		.right{
+			flex-grow: 1;
+		}
+  }
+}
+
+  
